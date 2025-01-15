@@ -1,0 +1,13 @@
+main: fr.artutu.mumblelink.MumbleLink
+author: Artutu
+version: 1.0.0
+name: MumbleLink
+commands:
+  mumble:
+    description: Commande mumble
+    aliases: [mb]
+  whoisnothere:
+    description: Pour voir les joueurs en jeu qui ne sont pas link
+  me:
+    description: Pour voir les informations sur votre mumblelink.
+    aliases: [mumblestatus, status]
