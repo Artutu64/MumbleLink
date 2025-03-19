@@ -8,6 +8,7 @@
 # Modules supportés
 
 - Werewolf-UHC (``Ph1Lou``)
+- Les votres (en adaptant votre code à partir de #Documentation)
 
 # Documentation
 
