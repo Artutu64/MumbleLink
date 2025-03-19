@@ -5,6 +5,10 @@
   3. Lancer le serveur puis configurer le fichier config.yml afin de mettre les informations du backend
   4. Reload le serveur
 
+# Modules supportés
+
+- Werewolf-UHC (``Ph1Lou``)
+
 # Documentation
 
 Vous pouvez modifier le plugin dynamiquement grâce à votre plugin UHC avec les méthodes suivantes:
