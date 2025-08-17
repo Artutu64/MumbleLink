@@ -14,6 +14,23 @@
 
 >💬️ MumbleLink est un plugin a ajouter sur un serveur spigot afin de créer et gérer des serveurs Mumble directement depuis minecraft. Son développement est axé vers l'UHC et cherche donc a répondre à ces besoins mais peut être utilisé dans d'autres projets.
 
+# Images
+
+### Création du serveur
+<img src="https://github.com/Artutu64/MumbleLink/raw/refs/heads/main/MenuCreationServer.png">
+
+### Menu des utilisateurs
+<img src="https://github.com/Artutu64/MumbleLink/raw/refs/heads/main/MenuWithData.png">
+
+### Commande /mumble
+<img src="https://github.com/Artutu64/MumbleLink/raw/refs/heads/main/CmdMumble.png">
+
+### Page web
+<img src="https://github.com/Artutu64/MumbleLink/raw/refs/heads/main/WebPage.png">
+
+### Link et pseudo random sur Mumble
+<img src="https://github.com/Artutu64/MumbleLink/raw/refs/heads/main/LinkAndMumble.png">
+
 # Installation
 
 *Avant de commencer l'installation, veuillez noter qu'il faut avoir un serveur avec des permissions root pour installer ce plugin.*
