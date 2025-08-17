@@ -4,11 +4,14 @@ import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 
 import fr.artutu.mumblelink.MumbleLink;
+import fr.artutu.mumblelink.utils.PseudoGenerator;
 
 public class StateHandler {
 	
 	public static boolean needToMuteWithoutBypass(MumbleUser user) {
-		return MumbleLink.defaultMuteChecker.needToMuteWithoutBypass(user);
+		String pseudo = PseudoGenerator.getNameFromGeneratedPseudo(user.getName());
+		boolean value = MumbleLink.defaultMuteChecker.needToMuteWithoutBypass(user, pseudo);
+		return value;
 	}
 	
 	
@@ -16,7 +19,8 @@ public class StateHandler {
 		boolean result = needToMuteWithoutBypass(user);
 		
 		try {
-			Player player = Bukkit.getPlayer(user.getName());
+			String pseudo = PseudoGenerator.getNameFromGeneratedPseudo(user.getName());
+			Player player = Bukkit.getPlayer(pseudo);
 			if(player != null && player.isOnline()) {
 				if(BypassList.canSpeakDueToBypass(player)) {
 					return false;
@@ -31,7 +35,8 @@ public class StateHandler {
 	public static boolean needToUnmute(MumbleUser user) {
 		
 		try {
-			Player player = Bukkit.getPlayer(user.getName());
+			String pseudo = PseudoGenerator.getNameFromGeneratedPseudo(user.getName());
+			Player player = Bukkit.getPlayer(pseudo);
 			if(player != null && player.isOnline()) {
 				if(BypassList.canSpeakDueToBypass(player)) {
 					return true;

@@ -13,9 +13,9 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 
 import fr.artutu.mumblelink.config.PluginData;
-import fr.artutu.mumblelink.requests.WebRequest;
-import fr.artutu.mumblelink.requests.WebRequest.Method;
-import fr.artutu.mumblelink.requests.WebRequest.WebResult;
+import fr.artutu.mumblelink.requests.TCPRequest;
+import fr.artutu.mumblelink.requests.TCPRequest.Method;
+import fr.artutu.mumblelink.requests.TCPRequest.TCPResult;
 
 public class UserUpdateCheck extends BukkitRunnable {
 	
@@ -24,7 +24,8 @@ public class UserUpdateCheck extends BukkitRunnable {
 	@Override
 	public void run() {
 		if(PluginData.backendOnline && PluginData.mumbleServer != null) {
-			WebResult response = WebRequest.execute("servers/" + PluginData.mumbleServer.getId() + "/user", Method.GET);
+			TCPResult response = TCPRequest.execute("servers/" + PluginData.mumbleServer.getId() + "/user", Method.GET);
+			
 			MumbleUser.USERLIST.clear();
 			
 			if(response.ok) {

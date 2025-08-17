@@ -1,7 +1,9 @@
 package fr.artutu.mumblelink.utils;
 
 import java.util.Random;
+import java.util.UUID;
 
+import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 
 import fr.artutu.mumblelink.MumbleLink;
@@ -39,5 +41,15 @@ public class PseudoGenerator {
 
         return randomString.toString();
     }
+	
+	public static String getNameFromGeneratedPseudo(String pseudo) {
+		for(UUID uuid : MumbleLink.PSEUDOS.keySet()) {
+			if(MumbleLink.PSEUDOS.get(uuid).equals(pseudo)) {
+				Player player = Bukkit.getPlayer(uuid);
+				return player.getName();
+			}
+		}
+		return "null";
+	}
 
 }

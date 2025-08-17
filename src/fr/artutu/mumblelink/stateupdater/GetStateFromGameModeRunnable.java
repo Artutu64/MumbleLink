@@ -16,11 +16,13 @@ public class GetStateFromGameModeRunnable extends BukkitRunnable {
 	@Override
 	public void run() {
 		GameState newState = null;
+		
 		for(StateFinder finder : stateFinders) {
 			if(newState == null) {
 				newState = finder.getState();
 			}
 		}
+		
 		if(newState != null && !MumbleLink.gameState.equals(newState)) {
 			MumbleLink.gameState = new GameState(newState.getState());
 			Bukkit.broadcastMessage(" §b§lMUMBLE §7▪ Le nouveau gamestate est §b§l" + newState.getState().toUpperCase());

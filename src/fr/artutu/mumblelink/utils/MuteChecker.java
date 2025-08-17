@@ -4,6 +4,6 @@ import fr.artutu.mumblelink.mumble.MumbleUser;
 
 public interface MuteChecker {
 	
-	public  boolean needToMuteWithoutBypass(MumbleUser user);
+	public  boolean needToMuteWithoutBypass(MumbleUser user, String pseudo);
 
 }

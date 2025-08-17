@@ -10,8 +10,6 @@ public class PluginData extends BukkitRunnable {
 
 	public static boolean backendOnline = false;
 	public static MumbleServer mumbleServer = null;
-	public static String SERVER_IP = "localhost";
-	public static int WEB_PORT = 20000;
 	
 	public PluginData() {
 		CheckBackend.execute();

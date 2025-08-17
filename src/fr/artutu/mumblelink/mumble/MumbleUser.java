@@ -11,8 +11,8 @@ import com.google.gson.JsonParser;
 
 import fr.artutu.mumblelink.MumbleLink;
 import fr.artutu.mumblelink.config.PluginData;
-import fr.artutu.mumblelink.requests.WebRequest;
-import fr.artutu.mumblelink.requests.WebRequest.Method;
+import fr.artutu.mumblelink.requests.TCPRequest;
+import fr.artutu.mumblelink.requests.TCPRequest.Method;
 
 public class MumbleUser {
 	
@@ -40,7 +40,7 @@ public class MumbleUser {
 		if(PluginData.mumbleServer != null) {
 			Bukkit.getScheduler().runTaskLaterAsynchronously(MumbleLink.getInstance(), () -> {
 				String url = "servers/" + PluginData.mumbleServer.getId() + "/user/" + this.name + "/mute";
-				WebRequest.execute(url, Method.POST);
+				TCPRequest.execute(url, Method.POST);
 			}, 0);
 		}
 	}
@@ -67,7 +67,7 @@ public class MumbleUser {
 		if(PluginData.mumbleServer != null) {
 			Bukkit.getScheduler().runTaskLaterAsynchronously(MumbleLink.getInstance(), () -> {
 				String url = "servers/" + PluginData.mumbleServer.getId() + "/user/" + this.name + "/unmute";
-				WebRequest.execute(url, Method.POST);
+				TCPRequest.execute(url, Method.POST);
 			}, 0);
 		}
 	}

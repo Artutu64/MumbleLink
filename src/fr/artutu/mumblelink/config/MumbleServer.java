@@ -7,9 +7,9 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 
 import fr.artutu.mumblelink.MumbleLink;
-import fr.artutu.mumblelink.requests.WebRequest;
-import fr.artutu.mumblelink.requests.WebRequest.Method;
-import fr.artutu.mumblelink.requests.WebRequest.WebResult;
+import fr.artutu.mumblelink.requests.TCPRequest;
+import fr.artutu.mumblelink.requests.TCPRequest.Method;
+import fr.artutu.mumblelink.requests.TCPRequest.TCPResult;
 
 public class MumbleServer {
 	
@@ -37,7 +37,7 @@ public class MumbleServer {
 	
 	public static void startServer() {
 		if(PluginData.backendOnline && PluginData.mumbleServer == null) {
-			WebResult response = WebRequest.execute("servers/", Method.POST);
+			TCPResult response = TCPRequest.execute("servers/", Method.POST);
 			if(response.ok) {
 				try {
 					JsonObject jsonObject = (new JsonParser()).parse(response.getBody()).getAsJsonObject();
@@ -47,7 +47,7 @@ public class MumbleServer {
 					for(Player player : Bukkit.getOnlinePlayers()) {
 						String url = "servers/shortlink?uuid=" + player.getUniqueId().toString() +"&port=" + PluginData.mumbleServer.getPort() + "&host=" + PluginData.mumbleServer.getHost() +"&pseudo=" + MumbleLink.PSEUDOS.get(player.getUniqueId());
 						Bukkit.getScheduler().runTaskLaterAsynchronously(MumbleLink.getInstance(), () -> {
-							WebRequest.execute(url, Method.POST);
+							TCPRequest.execute(url, Method.POST);
 						}, 0);
 					}
 				} catch(Exception e) {
@@ -59,11 +59,11 @@ public class MumbleServer {
 	
 	public static boolean stopServer() {
 		if(PluginData.mumbleServer != null) {
-			WebRequest.execute("servers/" + PluginData.mumbleServer.getId() + "/", Method.DELETE);
+			TCPRequest.execute("servers/" + PluginData.mumbleServer.getId() + "/", Method.DELETE);
 			for(Player player : Bukkit.getOnlinePlayers()) {
 				String url = "servers/shortlink?uuid=" + player.getUniqueId().toString();
 				Bukkit.getScheduler().runTaskLaterAsynchronously(MumbleLink.getInstance(), () -> {
-					WebRequest.execute(url, Method.POST);
+					TCPRequest.execute(url, Method.POST);
 				}, 0);
 			}
 			PluginData.mumbleServer = null;

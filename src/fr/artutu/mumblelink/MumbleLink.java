@@ -24,7 +24,6 @@ import fr.artutu.mumblelink.permission.DefaultChecker;
 import fr.artutu.mumblelink.permission.PermChecker;
 import fr.artutu.mumblelink.stateupdater.GetStateFromGameModeRunnable;
 import fr.artutu.mumblelink.stateupdater.StateFinder;
-import fr.artutu.mumblelink.stateupdater.WerewolfStateFinder;
 import fr.artutu.mumblelink.utils.DefaultMuteChecker;
 import fr.artutu.mumblelink.utils.GameState;
 import fr.artutu.mumblelink.utils.HeadBuilder;
@@ -77,8 +76,6 @@ public class MumbleLink extends JavaPlugin {
 				MumbleLink.PSEUDOS.put(player.getUniqueId(), mumblePseudo);
 			}
 	    }
-	    
-	    _addStateFinder_(new WerewolfStateFinder());
 	    
 	}
 	

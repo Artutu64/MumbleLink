@@ -9,14 +9,14 @@ import fr.artutu.mumblelink.mumble.MumbleUser;
 public class DefaultMuteChecker implements MuteChecker {
 
 	@Override
-	public boolean needToMuteWithoutBypass(MumbleUser user) {
+	public boolean needToMuteWithoutBypass(MumbleUser user, String pseudo) {
 		if(!user.isLinked()) return true;
 		
 		if(MumbleLink.gameState.equals(GameState.ENDING)) {
 			return false;
 		} else if(MumbleLink.gameState.equals(GameState.PLAYING)) {
 			try {
-				Player player = Bukkit.getPlayer(user.getName());
+				Player player = Bukkit.getPlayer(pseudo);
 				if(player != null && player.isOnline()) {
 					if(MumbleLink.inGameChecker.isInGame(player)) {
 						return false;
