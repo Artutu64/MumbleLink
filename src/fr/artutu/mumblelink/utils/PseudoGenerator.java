@@ -46,7 +46,10 @@ public class PseudoGenerator {
 		for(UUID uuid : MumbleLink.PSEUDOS.keySet()) {
 			if(MumbleLink.PSEUDOS.get(uuid).equals(pseudo)) {
 				Player player = Bukkit.getPlayer(uuid);
-				return player.getName();
+				if (player != null) {
+					return player.getName();
+				}
+				return null;
 			}
 		}
 		return "null";

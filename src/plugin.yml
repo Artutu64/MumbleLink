@@ -1,6 +1,6 @@
 main: fr.artutu.mumblelink.MumbleLink
 author: Artutu
-version: 1.1.0
+version: 1.1.1
 name: MumbleLink
 commands:
   mumble:
