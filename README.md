@@ -20,13 +20,22 @@
 
 1. Installer le [mumble_backend](https://github.com/Artutu64/mumble_backend) sur votre machine (VPS/Serveur dédié).
 
-Et garder de côté
+Et garder de côté les informations suivantes:
+<img src="https://raw.githubusercontent.com/Artutu64/MumbleLink/main/Output-installation.png">
 
 2. **Ajouter le plugin**  
    Placez le plugin dans votre dossier `plugins`.
 
+
 3. **Configurer le backend**  
    Lancez le serveur une première fois, puis éditez le fichier `config.yml` pour y renseigner les informations de votre backend.
+
+- backend : Mettre l'ip du backend
+- protocol: (ancienne valeur, laisser http ou https)
+- random-names: true/false (pour ajouter de l'anonymat sur le serveur)
+- iv: la chaine IV du screenshot
+- key: la chaine KEY du screenshot
+- state-finder: none/LG_Ph1Lou (none: le détecteur d'état par défaut, LG_Ph1Lou: le détecteur d'état du plugin WereWolf-UHC de Ph1Lou)
 
 4. **Relancer le serveur**  
    Redémarrez le serveur pour appliquer la configuration.
