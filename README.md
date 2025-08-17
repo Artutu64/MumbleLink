@@ -1,9 +1,36 @@
+<div align="center">
+    <br/>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8f/Icons_mumble.svg/1200px-Icons_mumble.svg.png" alt="Mumble Logo" width="200"/>
+    <h1>Mumble Link v1</h1>
+</div>
+
+<p align="center">
+	🌐 <a href="https://github.com/Artutu64/MumbleLink">Spigot-MC</a>
+	 &#124;
+	📓 <a href="https://github.com/Artutu64/MumbleLink">Github</a>
+	 &#124;
+	🔎 <a href="https://github.com/Artutu64/MumbleLink/issues">Issue</a>
+</p>
+
+>💬️ MumbleLink est un plugin a ajouter sur un serveur spigot afin de créer et gérer des serveurs Mumble directement depuis minecraft. Son développement est axé vers l'UHC et cherche donc a répondre à ces besoins mais peut être utilisé dans d'autres projets.
+
 # Installation
 
-  1. Installer le backend (vous pouvez le trouver sur le lien suivant: https://github.com/Artutu64/mumble_backend)
-  2. Ajouter le plugin dans votre dossier plugins
-  3. Lancer le serveur puis configurer le fichier config.yml afin de mettre les informations du backend
-  4. Relancer le serveur
+*Avant de commencer l'installation, veuillez noter qu'il faut avoir un serveur avec des permissions root pour installer ce plugin.*
+
+1. Installer le [mumble_backend](https://github.com/Artutu64/mumble_backend) sur votre machine (VPS/Serveur dédié).
+
+Et garder de côté
+
+2. **Ajouter le plugin**  
+   Placez le plugin dans votre dossier `plugins`.
+
+3. **Configurer le backend**  
+   Lancez le serveur une première fois, puis éditez le fichier `config.yml` pour y renseigner les informations de votre backend.
+
+4. **Relancer le serveur**  
+   Redémarrez le serveur pour appliquer la configuration.
+
 
 # Modules supportés
 
