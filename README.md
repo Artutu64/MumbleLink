@@ -44,11 +44,11 @@ Et garder de côté les informations suivantes:
    Placez le plugin dans votre dossier `plugins`.
 
 
-3. **Configurer le backend**  
+3. **Configurer le plugin**  
    Lancez le serveur une première fois, puis éditez le fichier `config.yml` pour y renseigner les informations de votre backend.
 
 - backend : Mettre l'ip du backend
-- protocol: (ancienne valeur, laisser http ou https)
+- protocol: (http ou https) *(uniquement présent pour des raisons de compatibilité)*
 - random-names: true/false (pour ajouter de l'anonymat sur le serveur)
 - iv: la chaine IV du screenshot
 - key: la chaine KEY du screenshot
